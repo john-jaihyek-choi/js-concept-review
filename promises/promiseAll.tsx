@@ -30,6 +30,23 @@ function promiseAll2<T>(functions: Fn<T>[]): Promise<T[]> {
   return Promise.all(collections);
 }
 
+// Demonstration of Promise.allSettled
+async function promiseAll<T>(functions: Fn<T>[]): Promise<T[]> {
+  const collections = functions.map((fn) => {
+    return fn();
+  });
+
+  const test = await Promise.allSettled(collections);
+  console.log(test);
+  // results of allSettled will be in an array of objects indicating the failure and fulfilled promises
+  // ex)
+  // [
+  //   { status: 'fulfilled', value: 1 },
+  //   { status: 'rejected', reason: 'Error' }
+  // ]
+  return [];
+}
+
 /**
  * const promise = promiseAll([() => new Promise(res => res(42))])
  * promise.then(console.log); // [42]
