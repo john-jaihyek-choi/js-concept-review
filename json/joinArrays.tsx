@@ -7,7 +7,7 @@ type JSONValue =
   | { [key: string]: JSONValue };
 type ArrayType = { id: number } & Record<string, JSONValue>;
 
-function join1(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
+export function join1(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   // initial idea
   // use hashmap to store arr1's items (arr1Hash)
   // iterate arr1 (item = arr1[i])
@@ -51,7 +51,7 @@ function join1(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   return res.sort((a, b) => a.id - b.id); // TC: O( (n+m) log (n+m))
 }
 
-function join2(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
+export function join2(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   // iterating to add the merging properties rather than deleting in hashmap and manually iterating and adding
 
   // TC: O( (n+m) log (n+m)) / SC: O(n + m)
@@ -76,7 +76,7 @@ function join2(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   return res.sort((a, b) => a.id - b.id);
 }
 
-function join3(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
+export function join3(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   // iterate the matching item object and copy manually rather than making new object
 
   // TC: O( (n+m) log (n+m)) / SC: O(n + m)
@@ -106,7 +106,7 @@ function join3(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   return res.sort((a, b) => a.id - b.id); // TC: O((n+m) log (n + m))
 }
 
-function join4(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
+export function join4(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   // Use maps
 
   // TC: O( (n+m) log (n+m)) / SC: O(n + m)
@@ -129,7 +129,7 @@ function join4(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   return [...map.values()].sort((a, b) => a.id - b.id);
 }
 
-function join5(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
+export function join5(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
   // other idea:
   // combine arr1 and arr2 to begin with (combinedArr)
   // initialize an empty object to store merged objects with same id (merged)
