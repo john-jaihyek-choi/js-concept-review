@@ -157,23 +157,3 @@ export function join5(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
 
   return Object.values(merged);
 }
-
-export function join6(arr1: ArrayType[], arr2: ArrayType[]): ArrayType[] {
-  // use lodash library
-
-  //
-  const mergedArray = _.merge({}, ...arr1, ...arr2);
-
-  return mergedArray;
-}
-
-const arr1 = [
-  { id: 1, x: 2, y: 3 },
-  { id: 2, x: 3, y: 6 },
-];
-const arr2 = [
-  { id: 2, x: 10, y: 20 },
-  { id: 3, x: 0, y: 0 },
-];
-
-console.log(join6(arr1, arr2));
