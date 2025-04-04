@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-    "lodash": "^4.17.21"
-  },
+  "dependencies": {},
   "name": "js-concept-review",
   "version": "1.0.0",
   "main": "index.js",

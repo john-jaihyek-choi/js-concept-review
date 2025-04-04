@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 type JSONValue =
   | null
   | boolean

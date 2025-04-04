@@ -1,4 +1,4 @@
-import { join1, join2, join3, join4, join5 } from "./joinArrays.tsx";
+import { join1, join2, join3, join4, join5 } from "./joinArrays.ts";
 
 const arr1 = [
   { id: 1, x: 2, y: 3 },
